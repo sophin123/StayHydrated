@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "982736711153",
+    "firebase_url": "https://stayhydrated-6f770.firebaseio.com",
+    "project_id": "stayhydrated-6f770",
+    "storage_bucket": "stayhydrated-6f770.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982736711153:android:0a2d8f0272546469e06850",
+        "android_client_info": {
+          "package_name": "com.raywenderlich.android.drinkit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982736711153-lf8ibb4rsdlf1o4678visvld7havh942.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAti_hPP2z2h6VqKGAea2a-Q-EgS0GMnKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982736711153-lf8ibb4rsdlf1o4678visvld7havh942.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
