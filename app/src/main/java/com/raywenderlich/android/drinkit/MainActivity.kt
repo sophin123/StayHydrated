@@ -1,17 +1,20 @@
 package com.raywenderlich.android.drinkit
 
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
-import com.google.android.gms.common.api.GoogleApi
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.android.synthetic.main.activity_main.*
-import java.sql.Connection
 
 // TODO: import libraries
 
@@ -74,10 +77,13 @@ class MainActivity : AppCompatActivity() {
   override fun onStart() {
     super.onStart()
     //TODO: Register the receiver for notifications
+
+    LocalBroadcastManager.getInstance(this).registerReceiver(messageReceiver, IntentFilter("MyData"))
   }
 
   override fun onStop() {
     super.onStop()
+    LocalBroadcastManager.getInstance(this).unregisterReceiver(messageReceiver)
     // TODO: Unregister the receiver for notifications
   }
 
@@ -86,6 +92,13 @@ class MainActivity : AppCompatActivity() {
   // TODO: Add a function to check for Google Play Services
 
   // TODO: Create a message receiver constant
+
+  private val messageReceiver: BroadcastReceiver = object : BroadcastReceiver(){
+    override fun onReceive(context: Context?, intent: Intent?) {
+      text_view_notification.text = intent?.extras?.getString("message")
+    }
+
+  }
 
   companion object {
     private const val TAG = "MainActivity"
