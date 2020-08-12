@@ -78,7 +78,7 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
     handler.post {
       remoteMessage.notification?.let {
         val intent = Intent("MyData")
-        intent.putExtra("message", it.body)
+        intent.putExtra("message", remoteMessage.data["Text"])
         broadCaster?.sendBroadcast(intent)
 
       }

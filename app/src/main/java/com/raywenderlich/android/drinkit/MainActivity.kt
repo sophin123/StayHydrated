@@ -36,6 +36,11 @@ class MainActivity : AppCompatActivity() {
 
     button_retrieve_token = findViewById(R.id.button_retrieve_token)
 
+    val bundle = intent.extras
+    if (bundle != null){
+      text_view_notification.text = bundle.getString("Text")
+    }
+
     if (checkGooglePlayServiceEnable()) {
       button_retrieve_token.setOnClickListener {
         FirebaseInstanceId.getInstance().instanceId
