@@ -36,7 +36,10 @@ package com.raywenderlich.android.drinkit
 
 //TODO: Add imports
 
-class MyFirebaseMessagingService {
+import com.google.firebase.messaging.FirebaseMessagingService
+
+
+class MyFirebaseMessagingService: FirebaseMessagingService() {
 
   // TODO: add onCreate
 
