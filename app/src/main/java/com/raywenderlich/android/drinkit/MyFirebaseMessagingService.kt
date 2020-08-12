@@ -36,7 +36,11 @@ package com.raywenderlich.android.drinkit
 
 //TODO: Add imports
 
+import android.os.Looper
+import android.widget.Toast
 import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.RemoteMessage
+import android.os.Handler
 
 
 class MyFirebaseMessagingService: FirebaseMessagingService() {
@@ -47,7 +51,25 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
 
   // TODO: add an onMessageReceived function
 
+  override fun onMessageReceived(remoteMessage: RemoteMessage) {
+    super.onMessageReceived(remoteMessage)
+    handleMessage(remoteMessage)
+  }
+
+
   // TODO: add a handle message method
+
+  private fun handleMessage(remoteMessage: RemoteMessage) {
+    //1
+    val handler = Handler(Looper.getMainLooper())
+
+    //2
+    handler.post {
+      Toast.makeText(baseContext, getString(R.string.handle_notification_now),
+              Toast.LENGTH_LONG).show()
+    }
+  }
+
 
   // TODO: Create a message receiver constant
 

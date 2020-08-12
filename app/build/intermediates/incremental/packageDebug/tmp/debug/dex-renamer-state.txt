@@ -1,4 +1,4 @@
-#Wed Aug 12 13:26:29 AEST 2020
+#Wed Aug 12 15:00:33 AEST 2020
 base.0=C\:\\Users\\sophi\\Desktop\\CLASS ACTIVITY\\Firebase Projects\\Drink-it_Materials\\starter\\app\\build\\intermediates\\dex\\debug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

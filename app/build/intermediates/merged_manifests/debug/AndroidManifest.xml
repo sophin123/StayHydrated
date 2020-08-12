@@ -44,11 +44,13 @@
             </intent-filter>
         </activity>
 
-        <!-- TODO: Add the service for firebase -->
-
-
         <!-- TODO: Change the color and action of the notification -->
-
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher_foreground" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimary" />
 
         <!--
              FirebaseMessagingService performs security checks at runtime,
